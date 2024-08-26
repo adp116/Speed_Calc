@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://www.tsn.ca/polopoly_fs/1.1940458!/fileimage/httpImage/image.jpg_gen/derivatives/landscape_620/jacob-degrom.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 10px ridge #2082ebd6;
+    
+  }
+  #btn1{
+    padding: 0.1rem .5rem;
+    margin: 0 0.1rem;
+    border-radius: 10px;
+    border: 1px ridge #f8f8f8;
+  }
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  :root {
+    --clr-1: #0055ff;
+    --clr-2: #2082ebd6;
+    --clr-3: #1b77e7;
+    --clr-4: #3ab2e6;
+    --clr-5: #6289eb;
+  }
+  
+  .container {
+    padding: 1rem;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    border: 50px red;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  
+  
+  .container::before,
+  .container::after {
+    content: "";
+    position: absolute;
+    inset: -0.5rem;
+    z-index: -1;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-3)
+    );
+    border-radius: inherit;
+    animation: rotation 1.5s linear infinite;
+  }
+  
+  .container::after {
+    filter: blur(3.5rem);
+  }
+  
+  @keyframes rotation {
+    0% {
+      --gradient-angle: 0deg;
+    }
+    100% {
+      --gradient-angle: 360deg;
+    }
+  }
+  
+
+ 
+  .time {
+    padding: 1rem 0;
+    font-size: 2rem;
+  }
+
+  h1,
+  p {
+    color: #f8f8f8;
+  }
+
+  button {
+    padding: 0.4rem 1rem;
+    margin: 0 0.2rem;
+    border-radius: 10px;
+    border: 1px solid #f8f8f8;
+  }
+
+  button:hover {
+    background-color: rgba(6, 27, 91, 0.4);
+    color: white;
+  }
